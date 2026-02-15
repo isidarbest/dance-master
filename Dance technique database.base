@@ -1,0 +1,14 @@
+filters:
+  and:
+    - type == "dance"
+    - specification.contains("dance technique")
+    - '!file.name.contains("Template")'
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - principle
+      - connected_with
+    columnSize:
+      note.principle: 217

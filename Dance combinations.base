@@ -1,0 +1,11 @@
+filters:
+  and:
+    - type.contains("dance")
+    - specification.contains("combination")
+    - '!file.name.contains("Template")'
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - elements

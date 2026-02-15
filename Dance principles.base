@@ -1,0 +1,26 @@
+filters:
+  and:
+    - type == "dance"
+    - specification.contains("dance principle")
+    - '!file.name.contains("template")'
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - principle
+      - technique
+    sort:
+      - property: file.name
+        direction: ASC
+      - property: technique
+        direction: DESC
+      - property: principle
+        direction: ASC
+      - property: tags
+        direction: DESC
+      - property: connected_with
+        direction: ASC
+    columnSize:
+      file.name: 279
+      note.technique: 285

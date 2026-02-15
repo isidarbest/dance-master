@@ -1,0 +1,72 @@
+filters:
+  and:
+    - type.contains("dance")
+    - specification.contains("exercise")
+    - '!file.name.contains("template")'
+views:
+  - type: table
+    name: All exercises
+    order:
+      - file.name
+      - teacher
+      - tags
+      - topic
+    columnSize:
+      file.name: 325
+      note.teacher: 156
+      note.tags: 241
+  - type: table
+    name: My exercises
+    filters:
+      and:
+        - teacher.contains(link("Ondřej Král"))
+    order:
+      - file.name
+      - tags
+    columnSize:
+      file.name: 363
+  - type: table
+    name: From other teachers
+    filters:
+      and:
+        - '!teacher.contains(link("Ondřej Král"))'
+    order:
+      - file.name
+      - teacher
+      - tags
+    columnSize:
+      file.name: 363
+      note.teacher: 176
+  - type: table
+    name: Creativity exercises
+    filters:
+      and:
+        - file.tags.contains("creativity")
+    order:
+      - file.name
+      - teacher
+      - file.tags
+  - type: table
+    name: Musicality exercises
+    filters:
+      and:
+        - file.tags.contains("musicality")
+    order:
+      - file.name
+      - teacher
+      - tags
+    columnSize:
+      file.name: 363
+      note.teacher: 157
+  - type: table
+    name: Technique exercises
+    filters:
+      and:
+        - file.tags.contains("technique")
+    order:
+      - file.name
+      - teacher
+      - file.tags
+    columnSize:
+      file.name: 313
+      note.teacher: 152

@@ -1,0 +1,45 @@
+filters:
+  and:
+    - type.contains("dance element")
+    - '!file.name.containsAny("template")'
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - Portuguese
+      - English
+      - specification
+    sort:
+      - property: type
+        direction: DESC
+    columnSize:
+      file.name: 244
+      note.Portuguese: 132
+      note.English: 124
+      note.specification: 145
+  - type: table
+    name: Headmovements
+    filters:
+      and:
+        - specification.contains("headmovement")
+  - type: table
+    name: Bodymovements
+    filters:
+      and:
+        - specification.contains("bodymovement")
+    order:
+      - file.name
+      - English
+      - Portuguese
+      - Czech
+  - type: table
+    name: Style
+    filters:
+      and:
+        - specification.contains("style")
+    order:
+      - file.name
+      - English
+      - Portuguese
+      - Czech
